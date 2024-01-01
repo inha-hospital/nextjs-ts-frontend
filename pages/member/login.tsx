@@ -1,7 +1,7 @@
-import { Box, Button, Heading, TextField, Text } from "@radix-ui/themes";
-import * as Form from "@radix-ui/react-form";
+import { Box, Heading } from "@radix-ui/themes";
+import { Root, Field, Message, Submit } from "components/form";
 
-const login = () => {
+const Login = () => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -11,31 +11,19 @@ const login = () => {
   return (
     <Box>
       <Heading size='6'>로그인</Heading>
-      <Form.Root onSubmit={onSubmit}>
-        <Form.Field name="email">
-          <Form.Message match="valueMissing" asChild>
-            <Text color="red">이메일을 입력해주세요.</Text>
-          </Form.Message>
-          <Form.Message match="typeMismatch" asChild>
-            <Text color="red">이메일 형식이 아닙니다.</Text>
-          </Form.Message>
-          <Form.Control asChild>
-            <TextField.Input type="email" required placeholder="이메일" />
-          </Form.Control>
-        </Form.Field>
-        <Form.Field name="password">
-          <Form.Message match="valueMissing" asChild>
-            <Text color="red">비밀번호를 입력해주세요.</Text>
-          </Form.Message>
-          <Form.Control asChild>
-            <TextField.Input type="password" required placeholder="비밀번호" />
-          </Form.Control>
-        </Form.Field>
-        <Form.Submit asChild>
-          <Button type="submit" >Submit</Button>
-        </Form.Submit>
-      </Form.Root>
+      <Root onSubmit={onSubmit}>
+        <Field name="이메일" type="email" required placeholder="이메일">
+          <>
+            <Message match="valueMissing" message="이메일을 입력해주세요." />
+            <Message match="typeMismatch" message="이메일 형식이 아닙니다." />
+          </>
+        </Field>
+        <Field name="비밀번호" type="password" required placeholder="비밀번호">
+          <Message match="valueMissing" message="비밀번호를 입력해주세요." />
+        </Field>
+        <Submit text="로그인" />
+      </Root>
     </Box>
   );
 };
-export default login;
+export default Login;
