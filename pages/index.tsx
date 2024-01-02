@@ -1,4 +1,4 @@
-import { Flex, Button, Text, Card } from "@radix-ui/themes";
+import { Grid, Box, Button, Text, Card } from "@radix-ui/themes";
 
 const Home = () => {
     return (
@@ -13,10 +13,12 @@ const Home = () => {
                     </Text>
                 </a>
             </Card>
-            <Flex direction="column" gap="2">
-                <Text>Hello from Radix Themes :)</Text>
-                <Button>Let's go</Button>
-            </Flex>
+            <Grid columns="3" gap="2">
+                <Box>
+                    <Text>Hello from Radix Themes :)</Text>
+                    <Button>Let's go</Button>
+                </Box>
+            </Grid>
         </>
     );
 };

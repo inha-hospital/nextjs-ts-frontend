@@ -1,0 +1,51 @@
+/* layout */
+.layout {
+    overflow: hidden;
+    display: block;
+    background: #fff;
+    position: relative;
+}
+.dark .layout {
+    min-height: 100vh;
+    background: #000;
+}
+
+.layout-main {
+    max-width: 768px;
+    padding: 2%;
+}
+
+@media (min-width: 786px) {
+    .layout-main {
+        max-width: 100%;
+        padding: 0 80px 80px;
+    }
+}
+
+/* nav-top */
+.nav-top {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.nav-top .logo {
+    display: none;
+    font-family: "Righteous";
+    font-size: 30px;
+}
+.nav-top .menus {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media (min-width: 786px) {
+    .nav-top {
+        height: 80px;
+        position: inherit;
+    }
+    .nav-top .logo {
+        display: block;
+    }
+}

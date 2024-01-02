@@ -1,26 +1,201 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+/* reset */
 html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "Montserrat", "Noto Sans KR", sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
+/* theme */
+:root {
+    color-scheme: light dark;
+    --colors-accent1: #7929fa;
+}
+
+/* selection */
+*::selection {
+    background: transparent;
+}
+input::selection {
+    background: rgba(41, 180, 102, 0.3);
+}
+
+/* scroll */
+html {
+    scroll-behavior: smooth;
+}
+.scbar::-webkit-scrollbar {
+    width: 8px;
+}
+.scbar::-webkit-scrollbar-thumb {
+    background: #7929fa;
+    border-radius: 7px;
+}
+.scbar::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 7px;
+}
+.dark .scbar::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 7px;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+.scbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* input */
+input {
+    outline: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+/* button */
+button {
+    cursor: pointer;
+}
+
+/* theme */
+:root {
+    /* Your default theme */
+    --background: white;
+    --foreground: #ccc;
+}
+.dark {
+    --background: black;
+    --foreground: #ccc;
+}
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: #000;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.dark a {
+    color: #fff;
 }
