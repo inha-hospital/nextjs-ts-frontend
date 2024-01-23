@@ -1,4 +1,5 @@
 import { Box, Heading } from "@radix-ui/themes";
+import { postLogin } from "api/member";
 import { Root, Field, Message, Submit } from "components/form";
 
 const Login = () => {
@@ -6,7 +7,14 @@ const Login = () => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
+    postLogin({
+      email: data.email as string,
+      password: data.password as string,
+    }).then((res) => {
+      alert(`로그인 성공! ${res.data.access_token}, ${res.data.refresh_token}`);
+    }).catch((err) => {
+      alert(`로그인 실패! ${err}`);
+    });
   }
   return (
     <Box>
