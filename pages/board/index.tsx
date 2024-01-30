@@ -5,19 +5,19 @@ import Link from "next/link";
 const Board = () => {
     return (
         <Box>
-            <Heading size="6">게시판</Heading>
-
-            <Flex direction="row" gap="3">
-                <TextField.Root size="3" color="red">
-                    <TextField.Slot color="red">
-                        <MagnifyingGlassIcon height="16" width="16" />
-                    </TextField.Slot>
-                    <TextField.Input placeholder="게시글 검색" />
-                </TextField.Root>
-                <Link href="/board/write">
-                    <Button size="3" color="red"><Pencil2Icon width="16" height="16" />글 작성</Button>
-                </Link>
-            </Flex>
+            <Heading>
+                <Flex direction="row" gap="3">
+                    <TextField.Root size="3" color="red">
+                        <TextField.Slot color="red">
+                            <MagnifyingGlassIcon height="16" width="16" />
+                        </TextField.Slot>
+                        <TextField.Input placeholder="게시글 검색" />
+                    </TextField.Root>
+                    <Link href="/board/write">
+                        <Button size="3" color="red"><Pencil2Icon width="16" height="16" />글 작성</Button>
+                    </Link>
+                </Flex>
+            </Heading>
 
             <Table.Root>
                 <Table.Body>
